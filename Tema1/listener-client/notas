@@ -1,0 +1,9 @@
+listener-client
+
+1. listener.py|client.py|client2.py
+El servidor (listener) acepta conexiones de los clientes, una vez establecida responde a un mensaje, cierra la conexión y espera una conexión nueva.
+Ejemplo de prueba: ejecutar listener, ejecutar client y client2 en el orden y con las repeticiones que se desee.
+
+2. listener_multiple.py|client.py|client2.py
+En este caso el servidor necesita dos conexiones, pues lo que hace es intercambiar los mensajes que le envían. 
+Probar diferentes combinaciones de ejecución.

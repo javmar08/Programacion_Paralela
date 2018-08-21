@@ -1,0 +1,37 @@
+Problema muy interesante pues muestra cómo puede 
+complicarse el cálculo de datos relativamente sencillos.
+
+Sugerencia: hacer primero soluciones independientes
+para entender bien los conceptos del problema.
+1. tf (apariciones de palabra por documento)
+2. documentos  en los que aparece una palabra 
+
+Las soluciones que propongo son las siguientes (los ficheros a.txt,
+b.txt y c.txt son para facilitar las pruebas):
+
+01-tf_idf.py 
+
+Resuelve un problema 'simplificado', no calculamos el número total
+de documentos D
+
+Calculamos (word, doc, apariciones de word en doc, docs en los que está word)
+(w,d,n,K)
+
+02-tf_idf.py 
+Calcula todos los datos que necesitamos en dos pasos.
+Primero calculamos  D y las tuplas w,d,n 
+y luego las tuplas w,K
+
+Probar a ejecutar comentando en steps el segundo paso.
+
+En total tenemos toda la información, ¿podemos aglutinarla?
+
+03-tf_idf.py muestra una solución con runners. 
+Además de redundancia parece que tiene una complejidad excesiva.
+Podemos resolverlo todo dentro del esquema mapReduce? 
+
+04-tf_idf.py 
+Solución final en la que el problema general se resuelve 
+únicamente con mapReduce, no necesitamos los runners.
+
+

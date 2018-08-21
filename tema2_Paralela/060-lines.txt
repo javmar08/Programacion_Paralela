@@ -1,0 +1,13 @@
+01 Hola, esto es un 
+02 fichero de prueba con 
+03 líneas y palabras, 
+04 para hacer un índice
+05 invertido.
+06 Es decir, 
+07 un índice para
+08 encontar facilmente
+09 las líneas en las
+10 que cada palabra
+11 aparece.
+12
+13 Esta línea comprueba la repetición en el índice, índice.

@@ -1,0 +1,21 @@
+En este directorio se plantean diversas soluciones al clásico problema
+de los lectores y escritores.
+
+Secuencia de trabajo:
+
+1. l_e_condition_basico.py  
+Propone una solución basada en condiciones. La solución es correcta pero
+puede provocar --con mucha facilidad-- la inanición de los escritores.
+
+2. l_e_condition_control_lectores.py
+Para controlar esta inanición proponemos el siguiente mecanismo:
+Si un escritor está esperando entonces los lectores no entran.
+Aunque interesante de programar por ver cómo se modifican las  
+condiciones que aparecen en las condiciones, la solución no es buena
+pues provoca la inanición de los lectores.
+
+3. l_e_condition_turnos.py
+Para solucionar los problemas anteriores adoptamos una solución
+similar a la del algoritmo de Dekker. Si hay mucha competencia utilizamos
+un turno para saber si son los lectores o los escritores los que deben
+esperar. De esta forma, se evita la inanición de los dos tipos de procesos.

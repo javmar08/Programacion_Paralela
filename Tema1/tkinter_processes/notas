@@ -1,0 +1,38 @@
+
+Introducción elemental a tkinter.
+
+1. tk_hello.py 
+   Programa para sacar una ventana muy simple pero con un canvas, que es un
+   widget en el que se puede dibujar.
+
+2. tk_hello_events.py
+   Programa que añade al anterior la posibilidad de gestionar eventos 
+   generados en	la ventana: click de ratón en el canvas y pulsación del botón.
+
+3. tk_hello_grid.py
+   Muestra como usar grid para colocar de forma muy versátil los elementos
+   dentro de la ventana.
+
+Secuencia de ejemplos que muestran como podemos hacer que los procesos 
+interactúen con el interfaz gráfico.
+
+1. processes_tk_queu.py
+   Programa muy básico que pone a dos procesos a funcionar. Los procesos 
+   utilizan una cola (queue) para enviar mensajes al programa principal.
+   Es decir, la ejecución del bucle while del programa principal y los dos 
+   procesos p y q es simultánea.
+
+2. processes_tk_queu_button.py
+   Muy similar al anterior pero podemos ver también funcionando a los 
+   widgets de la ventana, en este caso utilizamos un botón  para arrancar los
+   procesos y otro para terminar. Observa que podemos utilizar el botón de 
+   "start" varias veces. Observa también que cuando pulsamos el botón "end"
+   los procesos ya no muestran su evolución en el interfaz gráfico pues el 
+   programa principal ha terminado, pero su actividad continúa hasta que 
+   terminan con ella.
+
+3. processes_tk_queu_button_mouse.py
+   Igual que el anterior pero añadimos más detección de eventos. Así, mientras
+   se ejecutan los procesos que mueven las bolitas podemos ver cómo el canvas 
+   detecta los movimientos y los click de ratón.
+   

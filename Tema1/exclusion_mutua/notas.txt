@@ -1,0 +1,19 @@
+Curso 14-15
+
+0_procesos.py
+Process, definición de procesos; ejecución entrelazada.
+
+1_procesos.py: 
+Process, definición de procesos, argumentos; ejecución entrelazada.
+
+2_procesos.py:
+Process, definición de procesos, argumentos, nombre; ejecución entrelazada; current_process.
+
+EM_semaphore.py:
+Solución a la exclusión mutua con semáforos. 
+
+EM_semaphore_non_blocking.py:
+Solución con semáforo no bloqueante.
+
+
+

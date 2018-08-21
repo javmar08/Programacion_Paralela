@@ -1,0 +1,38 @@
+En este directorio se plantean diversas soluciones al clásico problema
+de los filósofos.
+
+Secuencia de trabajo:
+
+1. f_centralizado.py 
+Solución clásica con un camarero --una Condition-- que se encarga de 
+dormir a los filósofos que no pueden comer por no tener los tenedores.
+Atención a que antes de comer se debe liberar al camarero. Esta solución
+es muy centralizada pues el camarero tiene un conocimiento "global" del
+sistema.
+
+2. f_lock_deadlock.py
+propuesta muy básica con locks pero de tal forma que cada filósofo solo se 
+relaciona con los tenedores correspondientes. Cada tenedor es un lock 
+y cada filósofo debe coger el lock de cada uno de los tenedores 
+para poder comer. Solución incorrecta, produce deadlock.
+
+3. f_lock_livelock.py
+solución al deadlock anterior, si al coger los tenedores un filósofo encuentra 
+que el segundo tenedor no está libre suelta el primero para no causar deadlock.
+Aunque no se produce deadlock y todas las ejecuciones siempre terminan, es fácil ver livelocks en las trazas. También se puede achacar a esta solución el tener espera activa, los filósofos que no consiguen su segundo tenedor vuelven a intentarlo uno y otra vez, en lugar de ir a dormir hasta que se libere el palillo
+que están esperando. Atención al uso especial que se hace del parámetro blocking de los locks.
+
+4. f_lock_ok.py
+solución muy sencilla con locks, sin deadlock y sin espera activa. 
+Basta con introducir un poco de asimetría para que el deadlock no se de. En este caso, el último filósofo en lugar de pedir el tenedor derecho y luego el 
+izquierdo, pide primero el izquierdo y luego el derecho.
+
+5. f_pipes_simple.py 
+solución simplificada, sólo dos filósofos y un tenedor que tienen que pedirse
+el tenedor a través de un pipe. La solución muestra el funcionamiento 
+de un pipe que es un canal de comunicación en el que los distintos procesos 
+pueden comunicar e intercambiar información. En este caso, si un filosofo 
+tiene el tenedor puede comer, si no, lo pide y tiene que esperar a que el 
+otro conteste a la petición. Un filósofo no puede comer otra vez si 
+le han pedido el tenedor. 
+

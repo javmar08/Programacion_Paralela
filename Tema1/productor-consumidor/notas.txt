@@ -1,0 +1,45 @@
+En este directorio se plantean diversas soluciones al clásico 
+problema del productor/consumidor.
+
+Secuencia de aprendizaje:
+1. p_c_lock_value.py
+presenta una solución incorrecta, no basta con un único lock.
+
+2. p_c_lock_value_ok.py
+presenta una solución correcta utilizando dos semáforos. El almacen
+es un Value y por tanto la capacidad es de un elemento.
+Correcta para múltiples agentes.
+
+3. p_c_semaphore_array.py
+presenta un intento de solución para almacenes de capacidad arbitraria.
+Para ello utilizamos el tipo Array de multiprocessing. La solución no 
+es correcta pues el uso del array y de los índices puede dar lugar a 
+ejecuciones entrelazadas no deseadas.
+
+4. p_c_semaphore_array_ok.py
+soluciona los problemas del anterior programa añadiendo un nuevo cerrojo
+para el acceso al array. Funciona adecuadamente con múltiples instancias
+de productores o consumidores.
+
+5. p_c_semaphore_manager.py
+simplifica la solución anterior al utilizar un manager.list y por tanto
+evita el uso del lock de la estructura de almacenamiento.
+Fundamental el join para que el manager no desaparezca al terminar el 
+proceso del programa principal.
+
+6. p_c_condition_manager.py
+solución utilizando la primitiva de concurrencia condición. En este caso la 
+la decisión de cuándo un proceso tiene que esperar en el "wait" es muy sencilla,
+pero aunque fuese mucho más complicada la estructura sería la misma. Mucha 
+atención al "while" de la condición. Si usamos un condicional "if" la
+solución no es correcta. 
+El programa funciona con un productor y un consumidor, pero no si hay más
+de una instancia de alguno de ellos.
+
+7. p_c_condition_manager_multiple_mal.py
+un ejemplo de que la solución anterior no es correcta en caso de múltiples 
+instancias de productores o consumidores.
+
+8. p_c_condition_manager_multiple.py
+la solución al problema anterior es muy simple, pero hay que entender muy bien
+las diferencias entre notify y notify_all.
